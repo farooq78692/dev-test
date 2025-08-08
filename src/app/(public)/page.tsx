@@ -1,26 +1,11 @@
-import Link from "next/link";
-import ClientComponent from "./temps/ClientComponent";
-import ServerComponent from "./temps/ServerComponent";
+import ServerComponent from "./admin/page";
+import ClientComponent from "./client/page";
 
 const LandingPage = () => (
-  <>
-    <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
-      Create <span className="text-[hsl(280,100%,70%)]">Nomey</span>
-    </h1>
-
-    <div className="max-w-[600px] space-y-5 text-left">
-      <ClientComponent />
-
-      <ServerComponent />
-    </div>
-
-    <Link
-      href={"/api/auth/signin"}
-      className={`rounded-full bg-white/10 px-10 py-3 font-semibold no-underline transition hover:bg-white/20`}
-    >
-      {"Sign in"}
-    </Link>
-  </>
+  <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100">
+    <ServerComponent />
+    <ClientComponent />
+  </div>
 );
 
 export default LandingPage;
