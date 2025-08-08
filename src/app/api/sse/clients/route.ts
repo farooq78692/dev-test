@@ -9,9 +9,13 @@ export async function GET() {
   try {
     const clients = getClientDetails();
     return NextResponse.json({ clients });
-  } catch (_error) {
+  } catch (error: unknown) {
     return NextResponse.json(
-      { error: "Failed to get client details" },
+      {
+        error: `Failed to get client details, ${
+          error instanceof Error ? error.message : String(error)
+        }`,
+      },
       { status: 500 },
     );
   }
