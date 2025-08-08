@@ -22,7 +22,7 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [notification, setNotification] = useState<NotificationForm>({
     clientId: "",
-    event: "Notification",
+    event: "notification",
     message: "",
     broadcast: false,
   });
@@ -210,6 +210,7 @@ export default function AdminDashboard() {
                       event: e.target.value,
                     }))
                   }
+                  disabled
                   className="w-full rounded-xl border border-purple-300/30 bg-white/10 px-4 py-3 text-white placeholder-white/60 backdrop-blur-sm transition-all duration-200 focus:border-transparent focus:ring-2 focus:ring-purple-400"
                   placeholder="Notification"
                 />
